@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Welcome to the shop</h1>
+                <p class="lead text-muted">As you can probably see, this page is a bit barebones. - This is true. I havent managed to do extensive work to make it pretty yet.</p>
+      </div>
+    </div>
+  </section>
+
+    @if (Model.Products != null && Model.Products.Any())
+    {
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th> </th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var Product in Model.Products)
+                {
+                        <tr>
+                            <td>@Product.ProductName</td>
+                            <td>@Product.ProductType</td>
+                            <td>@Product.ProductPrice</td>
+                            <td>@Product.ProductQuantity</td>
+                            <td>
+                                <a href="/Products/Showcase/@Product.Id" class="btn btn-dark">Show more info</a>
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Products Found</p>
+    }
+</main>

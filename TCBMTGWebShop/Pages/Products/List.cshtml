@@ -1,0 +1,45 @@
+﻿@page
+@model TCBMTGWebShop.Pages.Products.ListModel
+@{
+}
+
+
+<h1 class="mb-3">List of Products</h1>
+
+@if (Model.Products != null && Model.Products.Any() )
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Product Type</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th><a type="" id="btnAdd" value="Add" class="btn btn-primary" href="/Products/Add">Add Product</a></th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var Product in Model.Products)
+            {
+                <tr>
+                    <td>@Product.Id</td>
+                    <td>@Product.ProductName</td>
+                    <td>@Product.ProductType</td>
+                    <td>@Product.ProductPrice</td>
+                    <td>@Product.ProductQuantity</td>
+                    <td>
+                        <a href="/Products/Edit/@Product.Id" class="btn btn-dark">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Products Found</p>
+}

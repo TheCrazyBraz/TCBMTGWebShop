@@ -1,0 +1,50 @@
+﻿@page
+@model TCBMTGWebShop.Pages.Products.AddModel
+
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+
+<h1 class="mb-3">Add New Product</h1>
+
+@if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+        @message
+        </div>
+    }
+
+
+<div class="mb-3">
+    <label class="form-label">Product Name</label>
+    <input type="text" class="form-control" asp-for="AddProductRequest.ProductName"/>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Product Description</label>
+        <input type="text" class="form-control" asp-for="AddProductRequest.ProductDescription" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Product Type</label>
+        <input type="text" class="form-control" asp-for="AddProductRequest.ProductType"/>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Product Price</label>
+        <input type="number" class="form-control" asp-for="AddProductRequest.ProductPrice" />
+</div>
+
+    <div class="mb-3">
+        <label class="form-label">Product Quantity</label>
+        <input type="number" class="form-control" asp-for="AddProductRequest.ProductQuantity" />
+    </div>
+
+    <div class="mb-3 d-flex justify-content-between">
+    <button type="submit" class="btn btn-primary" href="/Products/List">Save</button>
+    <a id="btnList" class="btn btn-dark" href="/Products/List">Back to Overview</a>
+</div>
+
+</form>
