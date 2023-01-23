@@ -1,0 +1,36 @@
+﻿@page
+@model TCBMTGWebShop.Pages.Types.AddModel
+
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+
+<h1 class="mb-3">Add New Product Type</h1>
+
+@if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+        @message
+        </div>
+    }
+
+
+
+<div class="mb-3">
+    <label class="form-label">Product Type Name</label>
+        <input type="text" class="form-control" asp-for="AddTypeRequest.ProductType"/>
+</div>
+
+    <div class="mb-3">
+        <label class="form-label">Product Type Storage Location</label>
+        <input type="text" class="form-control" asp-for="AddTypeRequest.TypeStorageSpace" />
+    </div>
+
+    <div class="mb-3 d-flex justify-content-between">
+    <button type="submit" class="btn btn-primary" href="/Types/List">Save</button>
+    <a id="btnList" class="btn btn-dark" href="/Types/List">Back to Overview</a>
+</div>
+
+</form>

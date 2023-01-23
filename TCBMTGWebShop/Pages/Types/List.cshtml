@@ -1,0 +1,55 @@
+﻿@page
+@model TCBMTGWebShop.Pages.Types.ListModel
+@{
+}
+
+
+<h1 class="mb-3">List of Types</h1>
+
+@if (Model.Types != null && Model.Types.Any() )
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Type</th>
+                <th>Type Storage Space</th>
+                <th><a type="" id="btnAdd" value="Add" class="btn btn-primary" href="/Types/Add">Add Product</a></th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var Type in Model.Types)
+            {
+                <tr>
+                    <td>@Type.Id</td>
+                    <td>@Type.ProductType</td>
+                    <td>@Type.TypeStorageSpace</td>
+                    <td>
+                        <a href="/Types/Edit/@Type.Id" class="btn btn-dark">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+            <table class="table">
+        <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product Type</th>
+                    <th>Type Storage Space</th>
+                    <th><a type="" id="btnAdd" value="Add" class="btn btn-primary" href="/Types/Add">Add Type</a></th>
+
+                </tr>
+
+            </thead>
+
+
+    <p>No Types Found</p>
+    </table>
+}

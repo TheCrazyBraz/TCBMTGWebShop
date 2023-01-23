@@ -15,6 +15,7 @@
                 <th>Id</th>
                 <th>Product Name</th>
                 <th>Product Type</th>
+                <th>Product Game</th>
                 <th>Product Price</th>
                 <th>Product Quantity</th>
                 <th><a type="" id="btnAdd" value="Add" class="btn btn-primary" href="/Products/Add">Add Product</a></th>
@@ -29,6 +30,7 @@
                     <td>@Product.Id</td>
                     <td>@Product.ProductName</td>
                     <td>@Product.ProductType</td>
+                    <td>@Product.productGame</td>
                     <td>@Product.ProductPrice</td>
                     <td>@Product.ProductQuantity</td>
                     <td>
@@ -41,5 +43,22 @@
 }
 else
 {
+            <table class="table">
+        <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                    <th>Product Game</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th><a type="" id="btnAdd" value="Add" class="btn btn-primary" href="/Products/Add">Add Product</a></th>
+
+                </tr>
+
+            </thead>
+
+
     <p>No Products Found</p>
+    </table>
 }

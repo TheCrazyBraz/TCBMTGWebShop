@@ -28,9 +28,24 @@
 </div>
 
 <div class="mb-3">
-    <label class="form-label">Product Type</label>
-        <input type="text" class="form-control" asp-for="AddProductRequest.ProductType"/>
+        <label asp-for="AddProductRequest.ProductType" class="control-label">Product Type</label>
+        <select asp-for="AddProductRequest.ProductType" class="form-control">
+            @foreach (var Type in Model.Types)
+            {
+                    <option value="@Type.ProductType">@Type.ProductType</option>
+            }
+        </select>
 </div>
+
+<div class="mb-3">
+        <label asp-for="AddProductRequest.productGame" class="control-label">Product Game</label>
+        <select asp-for="AddProductRequest.productGame" class="form-control">
+            @foreach (var Game in Model.Games )
+            {
+                    <option value="@Game.productGame">@Game.productGame</option>
+            }
+        </select>
+    </div>
 
 <div class="mb-3">
     <label class="form-label">Product Price</label>

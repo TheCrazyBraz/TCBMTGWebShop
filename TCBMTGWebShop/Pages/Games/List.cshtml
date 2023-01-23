@@ -1,0 +1,55 @@
+﻿@page
+@model TCBMTGWebShop.Pages.Games.ListModel
+@{
+}
+
+
+<h1 class="mb-3">List of Games</h1>
+
+@if (Model.Games != null && Model.Games.Any() )
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Game</th>
+                <th>Game Storage Space</th>
+                <th><a Game="" id="btnAdd" value="Add" class="btn btn-primary" href="/Games/Add">Add Product</a></th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var Game in Model.Games)
+            {
+                <tr>
+                    <td>@Game.Id</td>
+                    <td>@Game.productGame</td>
+                    <td>@Game.GameCreator</td>
+                    <td>
+                        <a href="/Games/Edit/@Game.Id" class="btn btn-dark">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+            <table class="table">
+        <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product Game</th>
+                    <th>Game Storage Space</th>
+                    <th><a Game="" id="btnAdd" value="Add" class="btn btn-primary" href="/Games/Add">Add Game</a></th>
+
+                </tr>
+
+            </thead>
+
+
+    <p>No Games Found</p>
+    </table>
+}

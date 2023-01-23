@@ -30,6 +30,7 @@ namespace TCBMTGWebShop.Pages.Products
                     ProductName = Product.ProductName,
                     ProductDescription = Product.ProductDescription,
                     ProductType = Product.ProductType,
+                    productGame = Product.productGame,
                     ProductPrice = Product.ProductPrice,
                     ProductQuantity = Product.ProductQuantity
                 };

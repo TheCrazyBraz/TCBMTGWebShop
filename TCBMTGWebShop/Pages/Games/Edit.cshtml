@@ -1,0 +1,41 @@
+﻿@page "{id:Guid}"
+@model TCBMTGWebShop.Pages.Games.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+
+<h1 class="mb-3">Edit Product Game</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+    <div class="mb-3">
+    <label class="form-label">Product ID</label>
+    <input Game="text" class="form-control" asp-for="EditGameViewModel.Id" readonly/>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Product Description</label>
+        <input Game="text" class="form-control" asp-for="EditGameViewModel.GameCreator" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Product Game</label>
+        <input Game="text" class="form-control" asp-for="EditGameViewModel.productGame" />
+</div>
+
+    <div class="mb-3 d-flex justify-content-between">
+        <button Game="submit" class="btn btn-primary" asp-page-handler="Update">
+            Update
+        </button>
+        <button Game="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Product?')" asp-page-handler="Delete">
+            Delete
+        </button>
+    </div>
+
+</form>

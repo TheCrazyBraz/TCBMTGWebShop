@@ -16,9 +16,9 @@ namespace TCBMTGWebShop.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProductDescription = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProductType = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProductPrice = table.Column<decimal>(type: "decimal (18, 2)", nullable: false)
                 },
                 constraints: table =>

@@ -11,5 +11,8 @@ namespace TCBMTGWebShop.Data
         }
 
         public DbSet<Product> Products{ get; set; }
+        public DbSet<productType> Types { get; set; }
+        public DbSet<ProductGame> Games { get; set; }
+
     }
 }
